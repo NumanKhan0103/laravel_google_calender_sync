@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use Spatie\GoogleCalendar\Event;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    dd('working');
+    $e = Event::get();
+    $e = $e[0];
+
+    dd($e);
+
     return view('welcome');
 });
 
